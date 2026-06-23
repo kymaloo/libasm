@@ -12,7 +12,13 @@ SRCS =  mandatory_part/ft_strlen.s \
         mandatory_part/ft_strdup.s \
 		mandatory_part/ft_putstr.s
 
+SRCS_BONUS =	bonus_part/ft_list_push_front.s \
+				bonus_part/ft_list_size.s \
+				bonus_part/ft_list_sort.s \
+				bonus_part/ft_list_remove_if.s
+
 OBJS = $(SRCS:.s=.o)
+OBJS_BONUS = $(SRCS_BONUS:.s=.o)
 
 RED     := \033[31m
 YELLOW  := \033[33m
@@ -40,4 +46,8 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+bonus: $(OBJS) $(OBJS_BONUS)
+	@echo "$(BLUE)Creating with bonus $(NAME)...$(RESET)"
+	@$(AR) $(NAME) $(OBJS) $(OBJS_BONUS)
+
+.PHONY: all clean fclean re bonus

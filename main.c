@@ -1,8 +1,8 @@
 #include "main.h"
 
-void	ft_free_content_node(void *data)
+void	ft_free_content_node()
 {
-    free(data);
+    // free(data);
 }
 
 int	main(void)
@@ -49,7 +49,7 @@ int	main(void)
 	// ft_putstr(buffer);
 
 	t_list *lst = NULL;
-	char *data1 = "a";
+	char *data1 = "test";
 	char *data2 = "test";
 	char *data3 = "a";
 	ft_list_push_front(&lst, data1);
@@ -86,17 +86,18 @@ int	main(void)
 	char *element = "test";
 	ft_list_remove_if(&current, element, &ft_strcmp, &ft_free_content_node);
 
+	puts("prout");
 
-	// current = lst;
-	// while (current)
-	// {
-	// 	if (!current->data)
-	// 		ft_write(1, current->data, ft_strlen((char *)current->data));
-	// 	else
-	// 		printf("NULL");
-	// 	ft_write(1, "\n", 1);
-	// 	current = current->next;
-	// }
+	current = lst;
+	while (current)
+	{
+		if (current->data)
+			ft_write(1, current->data, ft_strlen((char *)current->data));
+		else
+			printf("NULL");
+		ft_write(1, "\n", 1);
+		current = current->next;
+	}
 
 	t_list *tmp;
 	while (lst)
@@ -108,19 +109,3 @@ int	main(void)
 
 	return (0);
 }
-
-
-// list *current
-// current = lst;
-
-
-// while (current && current->next)
-// {
-// 	if (cmp != 0)
-// 	{
-// 		swap
-// 		current = lst;
-// 	}
-// 	else
-// 		current = current->next
-// }
