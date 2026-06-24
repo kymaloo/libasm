@@ -27,7 +27,7 @@ create_node:
     push rdi
     sub rsp, 8
     mov rdi, 16
-    call malloc
+    call malloc wrt ..plt
     add rsp, 8
     test rax, rax
     je .error2

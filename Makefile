@@ -15,7 +15,8 @@ SRCS =  mandatory_part/ft_strlen.s \
 SRCS_BONUS =	bonus_part/ft_list_push_front.s \
 				bonus_part/ft_list_size.s \
 				bonus_part/ft_list_sort.s \
-				bonus_part/ft_list_remove_if.s
+				bonus_part/ft_list_remove_if.s \
+				bonus_part/ft_atoi_base.s
 
 OBJS = $(SRCS:.s=.o)
 OBJS_BONUS = $(SRCS_BONUS:.s=.o)
